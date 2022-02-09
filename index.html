@@ -1,0 +1,364 @@
+<html>
+	<head>
+		<link rel='stylesheet' href='https://gomechanic.in/fonts/Gilroy.css' type='text/css' media='all' />
+		<style>
+			body{
+				font-family: 'Gilroy';
+			}
+			.border-box{
+				-webkit-box-sizing: border-box !important;
+				-moz-box-sizing: border-box !important;
+				box-sizing: border-box !important;
+			}
+			.clearfix{
+				overflow: hidden;
+				clear: both;
+			}
+			.outer{
+				width: 100%;
+				height : auto;
+				padding: 0;
+				margin: 0;
+			}
+			.header{
+				text-align: center;
+				font-size: xx-large;
+				font-weight: 700;
+				padding: 20px 0;
+			}
+			.category-bar{
+				width: 100%;
+				text-align: center;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-evenly;
+				/* margin-top: 20px; */
+				border-top: 1px solid #e2e2e2;
+				border-bottom: 1px solid #e2e2e2;
+				padding: 10px 10%;
+				font-size: small;
+			}
+			.category-bar-inner{
+				text-align: center;
+			}
+			.banner-bar{
+				width: 100%;
+				height: auto;
+				position: relative;
+				/* display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start; */
+			}
+			.banner-bar-inner{
+				width: 100%;
+				height: auto;
+			}
+			.banner-bar-inner+.banner-bar-inner{
+				width: 50%;
+				height: auto;
+				position: absolute;
+				top : 0;
+				left : 0;
+				right : 50%;
+				bottom : 0;
+				z-index: 2;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				/* background-color: red; */
+			}
+			.banner-bar-inner-top{
+				width: 100%;
+				flex: 1;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+				padding: 10px 100px;
+				font-size: x-large;
+			}
+			.banner-bar-inner img{
+				height: 500px;
+				width: 100%;
+				object-fit: cover;
+				object-position: top;
+			}
+			.claim-bar{
+				width: 100%;
+				text-align: center;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				margin-top: 20px;
+				border-top: 1px solid #e2e2e2;
+				border-bottom: 1px solid #e2e2e2;
+				padding: 10px 15%;
+				/* font-size: small; */
+			}
+			.claim-bar-inner{
+				flex : 1;
+				height: 100%;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: flex-start;
+				text-align: start;
+			}
+			.claim-bar-inner-divider{
+				width: 30px;
+				height: 100%;
+				background : #e2e2e2;
+			}
+			.featured-bar{
+				width: 100%;
+				text-align: center;
+				margin-top: 50px;
+				/* border-top: 1px solid #e2e2e2;
+				border-bottom: 1px solid #e2e2e2; */
+				padding: 10px 15%;
+				/* font-size: small; */
+			}
+			.featured-bar-upper{
+				width: 100%;
+				text-align: center;
+				font-size: x-large;
+			}
+			.featured-bar-lower{
+				width: 100%;
+				text-align: center;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				margin-top: 40px;
+				/* font-size: small; */
+			}
+			.featured-bar-lower-inner{
+				flex : 1;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: start;
+			}
+			.featured-bar-lower-inner .imagebox{
+				height: 150px;
+				width: 150px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: flex-start;
+				text-align: center;
+			}
+			.featured-bar-lower-inner .textbox1{
+				width: 150px;
+				text-align: start;
+				font-size: small;
+				font-weight: 600;
+				margin-top: 10px;
+			}
+			.featured-bar-lower-inner .textbox2{
+				width: 150px;
+				text-align: start;
+				font-size: small;
+				font-weight: 500;
+				margin-top: 5px;
+			}
+
+
+			.client-bar{
+				width: 100%;
+				text-align: center;
+				margin-top: 50px;
+				border-top: 1px solid #e2e2e2;
+				/* border-bottom: 1px solid #e2e2e2; */
+				padding: 10px 15%;
+				/* font-size: small; */
+			}
+			.client-bar-upper{
+				width: 100%;
+				text-align: center;
+				font-size: x-large;
+				margin-top: 50px;
+			}
+			.client-bar-lower{
+				width: 100%;
+				text-align: center;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				margin-top: 40px;
+				/* font-size: small; */
+			}
+			.client-bar-lower-inner{
+				flex : 1;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				text-align: start;
+			}
+			.client-bar-lower-inner .imagebox{
+				height: auto;
+				width: 200px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				text-align: center;
+				font-weight: 600;
+			}
+			.client-bar-lower-inner .textbox{
+				width: 200px;
+				text-align: start;
+				font-size: small;
+				margin-top: 15px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="outer border-box clearfix">
+			<div class="header border-box clearfix">
+				GoMechanic Exports
+			</div>
+			<div class="category-bar border-box clearfix">
+				<div class="category-bar-inner border-box clearfix">
+					HELMETS
+				</div>
+				<div class="category-bar-inner border-box clearfix">
+					INFLATORS & VACUUM
+				</div>
+				<div class="category-bar-inner border-box clearfix">
+					SPEAKERS & BASE-TUBES
+				</div>
+				<div class="category-bar-inner border-box clearfix">
+					CAR STEREOS
+				</div>
+				<div class="category-bar-inner border-box clearfix">
+					MEMORY FOAM
+				</div>
+			</div>
+			<div class="banner-bar border-box clearfix">
+				<div class="banner-bar-inner border-box clearfix">
+					<img src="https://s3.ap-south-1.amazonaws.com/lal10.storage/Global+pressence.png">
+				</div>
+				<div class="banner-bar-inner border-box clearfix">
+					<div class="banner-bar-inner-top border-box clearfix">
+						Exporting a wide range of cutting edge Automotive wholesale products across the World!
+					</div>
+					<!-- <div class="banner-bar-inner-bottom border-box clearfix">
+						
+					</div> -->
+				</div>
+			</div>
+			<div class="claim-bar border-box clearfix">
+				<div class="claim-bar-inner border-box clearfix">
+					High Quality exclusive brands and products
+				</div>
+				<div class="claim-bar-inner-divider border-box clearfix">
+				</div>
+				<div class="claim-bar-inner border-box clearfix">
+					Doorstep Delivery across 35 countries at best shipping cost
+				</div>
+				<div class="claim-bar-inner-divider border-box clearfix">
+				</div>
+				<div class="claim-bar-inner border-box clearfix">
+					Real time updates and Key Account Managers
+				</div>
+			</div>
+			<div class="featured-bar border-box clearfix">
+				<div class="featured-bar-upper border-box clearfix">
+					Shop our featured products
+				</div>
+				<div class="featured-bar-lower border-box clearfix">
+					<div class="featured-bar-lower-inner border-box clearfix">
+						<div class="imagebox border-box clearfix">
+							<img src="https://storage.googleapis.com/goacc/Helmets_Sept_06/VEG_HE_008/master.jpg" width="100" />
+						</div>
+						<div class="textbox1 border-box clearfix">
+							Vega Off Road D/V Matt Blue Full Face Size M Motorsports Helmet
+						</div>
+						<div class="textbox2 border-box clearfix">
+							1628
+						</div>
+					</div>
+					<div class="featured-bar-lower-inner border-box clearfix">
+						<div class="imagebox border-box clearfix">
+							<img src="https://storage.googleapis.com/goacc/Helmets_Sept_06/VEG_HE_008/master.jpg" width="100" />
+						</div>
+						<div class="textbox1 border-box clearfix">
+							Vega Off Road D/V Matt Blue Full Face Size M Motorsports Helmet
+						</div>
+						<div class="textbox2 border-box clearfix">
+							1628
+						</div>
+					</div>
+					<div class="featured-bar-lower-inner border-box clearfix">
+						<div class="imagebox border-box clearfix">
+							<img src="https://storage.googleapis.com/goacc/Helmets_Sept_06/VEG_HE_008/master.jpg" width="100" />
+						</div>
+						<div class="textbox1 border-box clearfix">
+							Vega Off Road D/V Matt Blue Full Face Size M Motorsports Helmet
+						</div>
+						<div class="textbox2 border-box clearfix">
+							1628
+						</div>
+					</div>
+					<div class="featured-bar-lower-inner border-box clearfix">
+						<div class="imagebox border-box clearfix">
+							<img src="https://storage.googleapis.com/goacc/Helmets_Sept_06/VEG_HE_008/master.jpg" width="100" />
+						</div>
+						<div class="textbox1 border-box clearfix">
+							Vega Off Road D/V Matt Blue Full Face Size M Motorsports Helmet
+						</div>
+						<div class="textbox2 border-box clearfix">
+							1628
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="client-bar border-box clearfix">
+				<div class="client-bar-upper border-box clearfix">
+					ClientSpeak
+				</div>
+				<div class="client-bar-lower border-box clearfix">
+					<div class="client-bar-lower-inner border-box clearfix">
+						<div class="imagebox border-box clearfix">
+							<img src="https://storage.googleapis.com/goacc/Helmets_Sept_06/VEG_HE_008/master.jpg" width="20" />
+							<span>Yashika Goel</span>
+						</div>
+						<div class="textbox border-box clearfix">
+							I just got my car serviced from GoMechanic and had a great experience. Thank you, Sameer, for making the exploration and decision making process easy. My car has been serviced across Noida in the past but never from a person and company that pays so much attention to the little things - from the detailing of the car to well-functioning.
+						</div>
+					</div>
+					<div class="client-bar-lower-inner border-box clearfix">
+						<div class="imagebox border-box clearfix">
+							<img src="https://storage.googleapis.com/goacc/Helmets_Sept_06/VEG_HE_008/master.jpg" width="20" />
+							<span>Yashika Goel</span>
+						</div>
+						<div class="textbox border-box clearfix">
+							I just got my car serviced from GoMechanic and had a great experience. Thank you, Sameer, for making the exploration and decision making process easy. My car has been serviced across Noida in the past but never from a person and company that pays so much attention to the little things - from the detailing of the car to well-functioning.
+						</div>
+					</div>
+					<div class="client-bar-lower-inner border-box clearfix">
+						<div class="imagebox border-box clearfix">
+							<img src="https://storage.googleapis.com/goacc/Helmets_Sept_06/VEG_HE_008/master.jpg" width="20" />
+							<span>Yashika Goel</span>
+						</div>
+						<div class="textbox border-box clearfix">
+							I just got my car serviced from GoMechanic and had a great experience. Thank you, Sameer, for making the exploration and decision making process easy. My car has been serviced across Noida in the past but never from a person and company that pays so much attention to the little things - from the detailing of the car to well-functioning.
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
